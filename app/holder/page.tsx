@@ -132,7 +132,7 @@ export default function HolderPage() {
         </form>
 
         {balance && (
-          <div style={{ marginTop: '1.5rem', padding: '1rem', background: '#f5f5f5', borderRadius: '4px' }}>
+          <div style={{ marginTop: '1.5rem', padding: '1rem', background: 'var(--panel-2)', borderRadius: '4px', border: '1px solid var(--line)' }}>
             <strong>Your Tier:</strong> <span className={`tier-badge ${getTierBadgeClass(getTierFromBalance(Number(balance)))}`}>
               {getTierFromBalance(Number(balance))}
             </span>
@@ -186,8 +186,8 @@ export default function HolderPage() {
                 </button>
               </div>
 
-              <div style={{ marginTop: '1.5rem', padding: '1rem', background: '#f0f7ff', borderRadius: '4px', borderLeft: '4px solid #667eea' }}>
-                <h4 style={{ color: '#667eea', marginBottom: '0.5rem' }}>Next Steps</h4>
+              <div style={{ marginTop: '1.5rem', padding: '1rem', background: 'rgba(163, 113, 215, 0.1)', borderRadius: '4px', borderLeft: '4px solid var(--witness)' }}>
+                <h4 style={{ color: 'var(--witness)', marginBottom: '0.5rem' }}>Next Steps</h4>
                 <ol style={{ marginLeft: '1.5rem' }}>
                   <li>Copy your commitment hash above</li>
                   <li>Visit the Verifier page to register policies or verify against existing ones</li>

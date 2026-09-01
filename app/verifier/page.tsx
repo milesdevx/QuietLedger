@@ -225,7 +225,7 @@ export default function VerifierPage() {
         {policies.length > 0 ? (
           <div style={{ display: 'grid', gap: '1rem', marginTop: '1rem' }}>
             {policies.map((policy) => (
-              <div key={policy.id} style={{ padding: '1rem', background: '#f9f9f9', borderRadius: '4px', border: '1px solid #e0e0e0' }}>
+              <div key={policy.id} style={{ padding: '1rem', background: 'var(--panel-2)', borderRadius: '4px', border: '1px solid var(--line)' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                   <div>
                     <strong>{policy.id}</strong>
@@ -316,9 +316,9 @@ export default function VerifierPage() {
           )}
 
           {!verifyResult.verified && verifyResult.error !== 'Missing commitment' && (
-            <div style={{ marginTop: '1.5rem', padding: '1rem', background: '#f8d7da', borderRadius: '4px', borderLeft: '4px solid #dc3545' }}>
-              <h4 style={{ color: '#721c24', marginBottom: '0.5rem' }}>Verification Failed</h4>
-              <p style={{ color: '#721c24' }}>
+            <div style={{ marginTop: '1.5rem', padding: '1rem', background: 'rgba(248, 81, 73, 0.1)', borderRadius: '4px', borderLeft: '4px solid var(--danger)' }}>
+              <h4 style={{ color: 'var(--danger)', marginBottom: '0.5rem' }}>Verification Failed</h4>
+              <p style={{ color: '#ff9b8a' }}>
                 The passport holder does not meet the tier requirement for this policy.
               </p>
             </div>
