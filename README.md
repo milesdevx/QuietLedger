@@ -118,7 +118,6 @@ QuietLedger/
 ├── jest.config.js
 ├── next.config.js
 ├── vercel.json
-└── quietledger-hosting-guide.md  # Deployment guide
 ```
 
 ---
@@ -167,7 +166,6 @@ Navigate to:
 
 ### 5. Deploy to Vercel
 
-See [quietledger-hosting-guide.md](./quietledger-hosting-guide.md) § 5.
 
 ```bash
 vercel --prod
@@ -272,8 +270,6 @@ Test coverage:
 - **SDK:** `@midnight-ntwrk/sdk` (frontend interacts with deployed contract)
 - **Proof Server:** Verifies circuits and returns proof for on-chain settlement
 
-See [quietledger-hosting-guide.md](./quietledger-hosting-guide.md) for full setup and deployment.
-
 ---
 
 ## Environment Variables
@@ -304,8 +300,6 @@ PROOF_SERVER_API_KEY=your-key-here
 | Vercel deployment fails | Check Node version, build command, and env vars in Vercel settings |
 | Live demo only works on localhost | Move proof-server calls to API routes (server-side), not client-side fetch |
 | Secrets leaked in NEXT_PUBLIC_ | Remove; set in Vercel project settings only |
-
-See [quietledger-hosting-guide.md](./quietledger-hosting-guide.md) for more.
 
 ---
 
