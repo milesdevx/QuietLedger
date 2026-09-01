@@ -2,8 +2,33 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'QuietLedger',
-  description: 'Private, reusable financial passport on Midnight Network',
+  title: 'QuietLedger — Private Financial Passports on Midnight',
+  description: 'Prove your financial tier without revealing your exact balance. Built on Midnight Network.',
+  icons: {
+    icon: '/favicon.ico',
+    apple: '/apple-touch-icon.png',
+  },
+  openGraph: {
+    title: 'QuietLedger',
+    description: 'Private, reusable financial passport on Midnight Network',
+    url: 'https://quietledger-theta.vercel.app',
+    siteName: 'QuietLedger',
+    images: [
+      {
+        url: '/og-image.svg',
+        width: 1200,
+        height: 630,
+        alt: 'QuietLedger - Prove your tier, keep your secrets',
+      },
+    ],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'QuietLedger',
+    description: 'Private financial passports on Midnight Network',
+    images: ['/og-image.svg'],
+  },
 };
 
 export default function RootLayout({

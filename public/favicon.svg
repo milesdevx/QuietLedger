@@ -1,0 +1,22 @@
+<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="faviconGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#d4a574;stop-opacity:1" />
+      <stop offset="33%" style="stop-color:#a371d7;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#58d4a8;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Dark background -->
+  <rect width="32" height="32" fill="#0f1117"/>
+
+  <!-- Shield icon -->
+  <path d="M 16 4 L 24 8 L 24 16 Q 16 24 16 24 Q 16 24 8 16 L 8 8 Z"
+        fill="url(#faviconGradient)" stroke="none"/>
+
+  <!-- Checkmark -->
+  <g transform="translate(16, 16)">
+    <path d="M -4 0 L -1 3 L 4 -2" stroke="white" stroke-width="1.5" fill="none"
+          stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

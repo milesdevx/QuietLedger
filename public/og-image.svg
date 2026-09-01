@@ -1,0 +1,66 @@
+<svg viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <!-- Dark background -->
+  <rect width="1200" height="630" fill="#0f1117"/>
+
+  <!-- Gradient background -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f1117;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a1f28;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#d4a574;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#58d4a8;stop-opacity:0.2" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bgGradient)"/>
+
+  <!-- Accent shapes -->
+  <rect x="0" y="0" width="1200" height="630" fill="url(#accentGradient)"/>
+
+  <!-- Logo on left -->
+  <g transform="translate(120, 150)">
+    <!-- Tier bands scaled up -->
+    <rect x="0" y="0" width="240" height="60" fill="#58d4a8" rx="4"/>
+    <text x="120" y="40" font-family="Inter, sans-serif" font-size="28" font-weight="700" fill="#0f1117" text-anchor="middle" dominant-baseline="middle">Tier A</text>
+
+    <rect x="0" y="72" width="240" height="60" fill="#58d4a8" opacity="0.85" rx="4"/>
+    <rect x="0" y="72" width="8" height="60" fill="#d4a574" rx="4"/>
+    <text x="120" y="112" font-family="Inter, sans-serif" font-size="28" font-weight="700" fill="#0f1117" text-anchor="middle" dominant-baseline="middle">Tier B</text>
+  </g>
+
+  <!-- Text on right -->
+  <g transform="translate(480, 200)">
+    <!-- Title -->
+    <text x="0" y="0" font-family="Fraunces, serif" font-size="72" font-weight="700" fill="#f0f6fc">
+      QuietLedger
+    </text>
+
+    <!-- Subtitle -->
+    <text x="0" y="80" font-family="Inter, sans-serif" font-size="32" fill="#58d4a8">
+      Private Financial Passports
+    </text>
+
+    <!-- Description -->
+    <text x="0" y="130" font-family="Inter, sans-serif" font-size="24" fill="#a0afc3">
+      Prove your tier without revealing your balance
+    </text>
+
+    <!-- Built on Midnight -->
+    <text x="0" y="180" font-family="Inter, sans-serif" font-size="18" fill="#8b94a5">
+      Built on Midnight Network
+    </text>
+  </g>
+
+  <!-- Bottom accent line -->
+  <rect x="0" y="600" width="1200" height="30" fill="#58d4a8" opacity="0.15"/>
+
+  <!-- Bottom text -->
+  <text x="30" y="620" font-family="Inter, sans-serif" font-size="16" fill="#8b94a5">
+    AKINDO WaveHack 2026 • Wave 1
+  </text>
+  <text x="1170" y="620" font-family="Inter, sans-serif" font-size="16" fill="#8b94a5" text-anchor="end">
+    midnight.network
+  </text>
+</svg>
