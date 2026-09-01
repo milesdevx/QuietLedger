@@ -393,8 +393,6 @@ Apache License 2.0 — See [LICENSE](./LICENSE) file.
 ## Support
 
 - **Midnight Discord:** [Join](https://discord.gg/midnight)
-- **Issues:** GitHub Issues (this repo)
-- **Setup Help:** See [quietledger-hosting-guide.md](./quietledger-hosting-guide.md)
 
 ---
 
