@@ -12,7 +12,7 @@
 [![Compact Version](https://img.shields.io/badge/Compact%20Compiler-0.31.1-green.svg)](https://docs.midnight.network/)
 [![Node.js Version](https://img.shields.io/badge/Node.js-22%20LTS-brightgreen.svg)](https://nodejs.org/)
 
-### 🚀 [Live Demo](https://quietledger-theta.vercel.app)
+### ▶ [Live Demo](https://quietledger-theta.vercel.app)
 
 **Try it now:** [https://quietledger-theta.vercel.app](https://quietledger-theta.vercel.app)
 - Issue a passport (Holder page)
@@ -81,15 +81,15 @@ QuietLedger differs from other solvency entries (`datum`, `Vantage`, `RentProof`
 ### Privacy Guarantee
 
 **What verifiers can see:**
-- ✓ Tier (A/B/C/D)
-- ✓ Passport age (blocks)
-- ✓ Whether it meets policy minimum
-- ✓ Whether it's fresh enough
+- [✔] Tier (A/B/C/D)
+- [✔] Passport age (blocks)
+- [✔] Whether it meets policy minimum
+- [✔] Whether it's fresh enough
 
 **What verifiers CANNOT see:**
-- ✗ Exact balance or income
-- ✗ Raw financial value in any form
-- ✗ Personal financial details
+- [✗] Exact balance or income
+- [✗] Raw financial value in any form
+- [✗] Personal financial details
 
 ---
 
@@ -215,12 +215,12 @@ npm test
 ```
 
 Test coverage:
-- ✓ Boundary cases: 10k, 100k, 500k, 1M
-- ✓ Policy registration and retrieval
-- ✓ Passport issuance with correct tier
-- ✓ Verification pass/fail for each tier
-- ✓ Staleness checks
-- ✓ Privacy: balance never exposed
+- [✔] Boundary cases: 10k, 100k, 500k, 1M
+- [✔] Policy registration and retrieval
+- [✔] Passport issuance with correct tier
+- [✔] Verification pass/fail for each tier
+- [✔] Staleness checks
+- [✔] Privacy: balance never exposed
 
 **CRITICAL:** Tests execute the actual compiled circuit, not a JavaScript approximation.
 
@@ -339,7 +339,7 @@ QuietLedger is built as a three-wave progression in the Midnight AKINDO WaveHack
 - Verification runs entirely on public ledger values
 - Tier bands prevent exact balance disclosure while enabling proof
 
-### 📋 Wave 2: Features & Hardening (Sep 27 – Oct 17, 2026)
+### → Wave 2: Features & Hardening (Sep 27 – Oct 17, 2026)
 
 **Planned Features:**
 - Passport revocation (issuer-authorized, enforced in-circuit)
