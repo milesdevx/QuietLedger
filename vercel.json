@@ -1,0 +1,9 @@
+{
+  "buildCommand": "npm run build",
+  "devCommand": "npm run dev",
+  "outputDirectory": ".next",
+  "env": {
+    "NEXT_PUBLIC_APP_NAME": "quietledger",
+    "NEXT_PUBLIC_CONTRACT_ID": "@NEXT_PUBLIC_CONTRACT_ID@"
+  }
+}

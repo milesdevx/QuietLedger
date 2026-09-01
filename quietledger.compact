@@ -1,0 +1,166 @@
+pragma language_version <match compact --version>;
+import CompactStandardLibrary;
+
+// Tier enumeration: financial standing bands
+enum Tier {
+  Tier_A,  // >= 1,000,000
+  Tier_B,  // >= 500,000
+  Tier_C,  // >= 100,000
+  Tier_D   // >= 10,000
+}
+
+// On-chain policy definition
+struct Policy {
+  minTier: Tier,
+  maxAgeRounds: Uint<32>
+}
+
+// Public passport record (never contains raw financial value)
+struct PassportRecord {
+  tier: Tier,
+  timestamp: Uint<64>
+}
+
+contract QuietLedger {
+  // Ledger: public state
+  // Policies registered by policy creators
+  policies: Map<Bytes<32>, Policy>,
+
+  // Passport commitments issued by holders
+  // Maps commitment hash -> {tier, timestamp}
+  passportCommitments: Map<Bytes<32>, PassportRecord>,
+
+  // Witness: private, local state held by the holder
+  // The actual financial value (balance/income) - never appears in ledger
+  localFinancialValue: Uint<64> witness,
+
+  // Witness: nonce for passport uniqueness
+  passportNonce: Uint<64> witness,
+
+  // Initialize contract
+  initialize() {
+    // Empty initial state; policies and passports added via circuits
+  }
+
+  // Circuit 1: Register a policy on-chain
+  // Called by policy creator/verifier
+  circuit registerPolicy(
+    policyId: Bytes<32>,
+    minTier: Tier,
+    maxAgeRounds: Uint<32>
+  ) -> boolean {
+    let policy = Policy {
+      minTier,
+      maxAgeRounds
+    };
+    self.policies[policyId] = policy;
+    disclose policyId;
+    disclose minTier;
+    disclose maxAgeRounds;
+    return true;
+  }
+
+  // Circuit 2: Issue a financial passport
+  // Called by holder; buckets their private balance into a tier
+  // Only discloses tier, timestamp, and commitment hash
+  circuit issuePassport() -> (Bytes<32>, Tier, Uint<64>) {
+    // Read private financial value
+    let balance = self.localFinancialValue;
+
+    // Bucket into tier based on thresholds
+    let tier: Tier;
+    if balance >= 1000000u64 {
+      tier = Tier::Tier_A;
+    } else if balance >= 500000u64 {
+      tier = Tier::Tier_B;
+    } else if balance >= 100000u64 {
+      tier = Tier::Tier_C;
+    } else {
+      tier = Tier::Tier_D;
+    }
+
+    // Generate timestamp (current round)
+    let timestamp = std::blockHeight();
+
+    // Increment nonce for uniqueness
+    self.passportNonce = self.passportNonce + 1u64;
+
+    // Compute commitment hash: H(balance, nonce, tier, timestamp)
+    // This commitment is publicly stored but doesn't reveal balance
+    let commitment = std::hash(
+      std::concat(
+        std::concat(
+          std::u64ToBytes(balance),
+          std::u64ToBytes(self.passportNonce)
+        ),
+        std::concat(
+          std::tierToBytes(tier),
+          std::u64ToBytes(timestamp)
+        )
+      )
+    );
+
+    // Store only tier and timestamp in public ledger
+    let record = PassportRecord {
+      tier,
+      timestamp
+    };
+    self.passportCommitments[commitment] = record;
+
+    // Disclose only: commitment, tier, and timestamp (NOT balance)
+    disclose commitment;
+    disclose tier;
+    disclose timestamp;
+
+    return (commitment, tier, timestamp);
+  }
+
+  // Circuit 3: Verify a passport against a policy
+  // Called by verifier; checks tier meets policy minimum
+  // Uses only public ledger state (already-disclosed values)
+  circuit verifyPassport(
+    commitment: Bytes<32>,
+    policyId: Bytes<32>
+  ) -> boolean {
+    // Retrieve the passport record from public ledger
+    let record = self.passportCommitments[commitment];
+
+    // Retrieve the policy from public ledger
+    let policy = self.policies[policyId];
+
+    // Check 1: Tier meets minimum
+    let tierOk = tierIsGreaterOrEqual(record.tier, policy.minTier);
+
+    // Check 2: Passport is not too old
+    let currentHeight = std::blockHeight();
+    let passportAge = currentHeight - record.timestamp;
+    let ageOk = passportAge <= policy.maxAgeRounds;
+
+    // Result: both checks must pass
+    let result = tierOk && ageOk;
+
+    disclose commitment;
+    disclose policyId;
+    disclose result;
+
+    return result;
+  }
+
+  // Helper: Compare tiers
+  // Returns true if tierA >= tierB
+  private fn tierIsGreaterOrEqual(tierA: Tier, tierB: Tier) -> boolean {
+    let tierAVal = tierToUint(tierA);
+    let tierBVal = tierToUint(tierB);
+    return tierAVal >= tierBVal;
+  }
+
+  // Helper: Convert tier to numeric value for comparison
+  private fn tierToUint(tier: Tier) -> Uint<8> {
+    match tier {
+      Tier::Tier_A => 3u8,
+      Tier::Tier_B => 2u8,
+      Tier::Tier_C => 1u8,
+      Tier::Tier_D => 0u8
+    }
+  }
+}
