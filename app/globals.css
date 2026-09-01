@@ -303,6 +303,20 @@ code {
   color: var(--text-faint);
 }
 
+.form-group select option {
+  background: var(--panel-2);
+  color: var(--text);
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: none;
+}
+
+.form-group select option:checked {
+  background: linear-gradient(135deg, var(--circuit), var(--witness));
+  color: var(--text);
+  font-weight: 600;
+}
+
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {

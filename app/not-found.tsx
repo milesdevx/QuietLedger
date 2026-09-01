@@ -1,3 +1,7 @@
+'use client';
+
+import Link from 'next/link';
+
 export default function NotFound() {
   return (
     <div className="card" style={{ marginTop: '3rem', textAlign: 'center' }}>
@@ -5,9 +9,11 @@ export default function NotFound() {
       <p style={{ color: 'var(--text-dim)', marginTop: '1rem' }}>
         The page you're looking for doesn't exist.
       </p>
-      <a href="/" className="button" style={{ marginTop: '1.5rem', display: 'inline-block' }}>
-        Go Home
-      </a>
+      <Link href="/">
+        <button className="button" style={{ marginTop: '1.5rem' }}>
+          Go Home
+        </button>
+      </Link>
     </div>
   );
 }

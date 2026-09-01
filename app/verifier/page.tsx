@@ -324,11 +324,14 @@ export default function VerifierPage() {
               value={verifyPolicyId}
               onChange={(e) => setVerifyPolicyId(e.target.value)}
               disabled={verifyLoading}
+              style={{ color: verifyPolicyId ? 'var(--text)' : 'var(--text-faint)' }}
             >
-              <option value="">-- Choose a policy --</option>
+              <option value="" style={{ color: 'var(--text-faint)' }}>
+                ◇ Choose a policy to verify against
+              </option>
               {policies.map((policy) => (
-                <option key={policy.id} value={policy.id}>
-                  {policy.id} (min: {policy.minTier})
+                <option key={policy.id} value={policy.id} style={{ color: 'var(--text)' }}>
+                  ◆ {policy.id} → Min: {policy.minTier}
                 </option>
               ))}
             </select>
