@@ -7,8 +7,8 @@ Setup, local testing, and Vercel deployment for Wave 1.
 ## 1. Prerequisites
 
 - Node.js 18+ and npm
-- Midnight `compact` CLI (installed via `npm install -g @midnight-ntwrk/compact-cli`)
 - Git
+- Midnight `compact` CLI (install from Midnight developer dashboard or toolchain)
 - Vercel CLI (optional, for local testing): `npm install -g vercel`
 
 Verify installations:
@@ -16,7 +16,10 @@ Verify installations:
 node --version
 npm --version
 compact --version
+git --version
 ```
+
+**Note:** The Midnight CLI (`compact`) is installed separately from the Midnight developer toolchain. See the [Midnight docs](https://developer.midnight.network) for CLI setup.
 
 ---
 
