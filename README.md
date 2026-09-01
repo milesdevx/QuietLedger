@@ -314,14 +314,63 @@ See [quietledger-hosting-guide.md](./quietledger-hosting-guide.md) for more.
 
 ---
 
-## Next Steps (Wave 2)
+## Wave Roadmap
 
-- Multi-currency support (USD, EUR, BTC, etc.)
-- Dynamic tier adjustment based on policy
-- Batch verification for enterprise use
-- Cross-chain bridge to Ethereum L2s
-- Governance: decentralized policy registry
-- Mobile native app (React Native)
+QuietLedger is built as a three-wave progression in the Midnight AKINDO WaveHack buildathon.
+
+### ✅ Wave 1: Foundation (Aug 27 – Sep 16, 2026)
+**Status:** Complete — Live at https://quietledger-theta.vercel.app
+
+**Delivered:**
+- ✓ Midnight Compact contract with three-layer model (ledger/witness/circuit)
+- ✓ Tier-based financial proof (A/B/C/D with fixed thresholds)
+- ✓ Reusable passport architecture (one credential, multiple verifiers)
+- ✓ Holder & Verifier UI with real circuit execution
+- ✓ Policy registry system (on-chain policies, passport verification)
+- ✓ Full test suite with boundary cases and privacy guarantees
+- ✓ Vercel deployment with live demo
+
+**Key Design Decisions:**
+- Balance stays in holder's witness, never on ledger
+- Disclose circuit outputs only commitment hash + tier + timestamp
+- Verification runs entirely on public ledger values
+- Tier bands prevent exact balance disclosure while enabling proof
+
+### 📋 Wave 2: Features & Hardening (Sep 27 – Oct 17, 2026)
+
+**Planned Features:**
+- Passport revocation (issuer-authorized, enforced in-circuit)
+- Purpose-tag policy dimension (rental, lending, employment tags prevent silent passport reuse)
+- Multi-policy batch verification (verify against multiple policies in one call)
+- UX enhancements: passport list with status (active/revoked/expired), non-leaking error messages
+- Validation evidence from live deployment
+
+**Requirements:**
+- All Wave 1 tests must still pass (no regressions)
+- New tests for revocation, purpose mismatch, batch verification
+- Explicit README section: "What changed since Wave 1"
+- Updated slide deck reflecting new features
+- Fresh Vercel redeploy with updated contract address
+
+### 🚀 Wave 3: Launch-Ready (Oct 27 – Nov 16, 2026)
+
+**Planned Features:**
+- Full `disclose()` security audit across contract
+- Issuer/oracle trust weighting (sealed registry of approved data sources)
+- Complete UX polish: onboarding, error states, stranger-testable full flow
+- Business viability section: specific target users (renters, freelancers, borrowers; landlords, lenders, employers), adoption path, realistic solo-scope framing
+- Build Club positioning: investor-ready presentation
+
+**Requirements:**
+- All prior Wave tests must pass (no late regressions)
+- Full clean-checkout re-verification (contract compiles, tests pass on fresh clone)
+- Explicit README section: "What changed since Wave 2" + 3-Wave arc
+- Final slide deck for Build Club / investor audience
+- Production Vercel deployment confirmed live through judging period (Nov 16–27)
+- Business viability statement with honest solo-builder scope
+
+**Build Club Qualification:**
+Wave 3 determines eligibility for the **Midnight Build Club** invite (8-week, part-time accelerator program with pitch access to investor network). Business viability matters here more than in earlier Waves.
 
 ---
 
