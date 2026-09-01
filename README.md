@@ -318,7 +318,7 @@ See [quietledger-hosting-guide.md](./quietledger-hosting-guide.md) for more.
 - [x] Holder + Verifier views live via SDK
 - [x] Repo public, `midnightntwrk` tagged, Apache 2.0 licensed
 - [x] README complete (this file)
-- [x] **Slide deck link:** [(add your link)](https://docs.google.com/presentation/d/15QIYxeYciJKXAcA1cKozYT5LWNcvd88SVnI4xt_jll0/edit?usp=sharing)
+- [x] **Slide deck link:** [QuietLedger — Private, Reusable Financial Passports PPT](https://docs.google.com/presentation/d/15QIYxeYciJKXAcA1cKozYT5LWNcvd88SVnI4xt_jll0/edit?usp=sharing)
 - [ ] **Demo / video pitch link:** (add your link)
 - [x] **Live Vercel URL:** https://quietledger-theta.vercel.app
 
