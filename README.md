@@ -1,5 +1,18 @@
 # QuietLedger
 
+# Vantage — Privacy-Preserving Credit Exposure Oracle on Midnight
+
+[![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Vercel-black.svg?logo=vercel)](https://quietledger-theta.vercel.app)
+[![Midnight Network](https://img.shields.io/badge/Midnight-Dual--Ledger-purple.svg)](https://docs.midnight.network/)
+[![Compact Version](https://img.shields.io/badge/Compact%20Compiler-0.31.1-green.svg)](https://docs.midnight.network/)
+[![Node.js Version](https://img.shields.io/badge/Node.js-22%20LTS-brightgreen.svg)](https://nodejs.org/)
+[![YouTube Demo](https://img.shields.io/badge/Demo%20Video-YouTube-red.svg?logo=youtube)](https://www.youtube.com/)
+[![Presentation Deck](https://img.shields.io/badge/Slide%20Deck-Google%20Slides-orange.svg?logo=googleslides)]()
+
+**Vantage** is an on-chain zero-knowledge regulatory oracle built on Midnight Network that enables microfinance borrowers to prove compliance with statutory exposure limits without disclosing their loan balances, lender identities, or personal identifiable information (PII).
+
+
 **Private, reusable financial passport on Midnight Network — prove your financial tier without revealing your exact balance.**
 
 ### 🚀 [Live Demo](https://quietledger-theta.vercel.app)
