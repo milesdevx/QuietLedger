@@ -2,6 +2,15 @@
 
 **Private, reusable financial passport on Midnight Network — prove your financial tier without revealing your exact balance.**
 
+### 🚀 [Live Demo](https://quietledger-theta.vercel.app)
+
+**Try it now:** [https://quietledger-theta.vercel.app](https://quietledger-theta.vercel.app)
+- Issue a passport (Holder page)
+- Register a policy (Verifier page)  
+- Verify against your tier
+
+---
+
 ## Overview
 
 QuietLedger lets a holder prove their financial standing falls within a tier (e.g., "Tier B or higher") **without revealing the exact balance/income figure**. Unlike single-use threshold proofs, the same passport can be re-verified by multiple different verifiers against different registered on-chain policies, without resubmitting private data each time.
@@ -301,7 +310,7 @@ See [quietledger-hosting-guide.md](./quietledger-hosting-guide.md) for more.
 - [x] README complete (this file)
 - [ ] **Slide deck link:** (add your link)
 - [ ] **Demo / video pitch link:** (add your link)
-- [ ] **Live Vercel URL:** (add your deployment URL)
+- [x] **Live Vercel URL:** https://quietledger-theta.vercel.app
 
 ---
 
