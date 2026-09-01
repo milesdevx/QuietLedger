@@ -12,23 +12,24 @@
     "compile": "compact compile quietledger.compact managed/quietledger"
   },
   "dependencies": {
+    "axios": "^1.6.0",
     "next": "^15.0.0",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "axios": "^1.6.0"
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
     "@types/jest": "^29.5.0",
     "@types/node": "^20.0.0",
     "@types/react": "^19.0.0",
     "jest": "^29.5.0",
+    "sharp": "^0.35.4",
     "ts-jest": "^29.1.0",
     "typescript": "^5.0.0"
   },
   "optionalDependencies": {
+    "@midnight-ntwrk/compact-cli": "^0.3.0",
     "@midnight-ntwrk/compact-runtime": "^0.3.0",
-    "@midnight-ntwrk/sdk": "^0.3.0",
-    "@midnight-ntwrk/compact-cli": "^0.3.0"
+    "@midnight-ntwrk/sdk": "^0.3.0"
   },
   "engines": {
     "node": ">=18.0.0",

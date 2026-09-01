@@ -7,8 +7,7 @@
 [![Midnight Network](https://img.shields.io/badge/Midnight-Dual--Ledger-purple.svg)](https://docs.midnight.network/)
 [![Compact Version](https://img.shields.io/badge/Compact%20Compiler-0.31.1-green.svg)](https://docs.midnight.network/)
 [![Node.js Version](https://img.shields.io/badge/Node.js-22%20LTS-brightgreen.svg)](https://nodejs.org/)
-[![YouTube Demo](https://img.shields.io/badge/Demo%20Video-YouTube-red.svg?logo=youtube)](https://www.youtube.com/)
-[![Presentation Deck](https://img.shields.io/badge/Slide%20Deck-Google%20Slides-orange.svg?logo=googleslides)]()
+[![Presentation Deck](https://img.shields.io/badge/Slide%20Deck-Google%20Slides-orange.svg?logo=googleslides)](https://docs.google.com/presentation/d/15QIYxeYciJKXAcA1cKozYT5LWNcvd88SVnI4xt_jll0/edit?usp=sharing)
 
 **Vantage** is an on-chain zero-knowledge regulatory oracle built on Midnight Network that enables microfinance borrowers to prove compliance with statutory exposure limits without disclosing their loan balances, lender identities, or personal identifiable information (PII).
 
