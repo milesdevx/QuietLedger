@@ -14,17 +14,16 @@
    - Click "Add New..." → "Project"
    - Select your QuietLedger repository
    - Vercel will auto-detect Next.js settings
+   - **Skip environment variables for now** (defaults are provided)
 
-3. **Configure Environment**
-   - Project settings → Environment Variables
-   - Add these (if needed):
-     - `NEXT_PUBLIC_APP_NAME=quietledger`
-     - `NEXT_PUBLIC_CONTRACT_ID=<your-contract-id>`
-
-4. **Deploy**
+3. **Deploy**
    - Click "Deploy"
    - Wait 2-3 minutes
    - Your URL will appear: `https://quietledger-xxx.vercel.app`
+
+4. **Optional: Add Environment Variables Later**
+   - Project settings → Environment Variables
+   - Only needed when integrating with Midnight proof server (Phase 2)
 
 ### Option 2: Vercel CLI (Manual)
 
@@ -51,18 +50,21 @@
 4. **Get your URL**
    Vercel will display your live URL after deployment
 
-## Environment Variables
+## Environment Variables (Optional)
 
-For production Vercel deployment, add these in Vercel Project Settings → Environment Variables:
+For production Vercel deployment, environment variables are **optional** (defaults are provided):
 
 ```
-NEXT_PUBLIC_APP_NAME=quietledger
-NEXT_PUBLIC_CONTRACT_ID=<your-contract-id>
-PROOF_SERVER_URL=https://proof-server.midnight.network
-PROOF_SERVER_API_KEY=<your-api-key>
+NEXT_PUBLIC_APP_NAME=quietledger  (optional, default: quietledger)
+NEXT_PUBLIC_CONTRACT_ID=<your-contract-id>  (optional, default: local-dev)
+PROOF_SERVER_URL=https://proof-server.midnight.network  (optional for Phase 2)
+PROOF_SERVER_API_KEY=<your-api-key>  (optional for Phase 2)
 ```
 
-⚠️ **IMPORTANT:** Never use `NEXT_PUBLIC_` prefix for `PROOF_SERVER_API_KEY`
+⚠️ **IMPORTANT:** 
+- Don't use `NEXT_PUBLIC_` prefix for `PROOF_SERVER_API_KEY` (keep it private)
+- These vars are NOT required for Wave 1 deployment
+- Only add them if you're integrating with Midnight proof server
 
 ## After Deployment
 
