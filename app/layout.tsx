@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     siteName: 'QuietLedger',
     images: [
       {
-        url: '/og-image.svg',
+        url: '/og-image.png',
         width: 1200,
         height: 630,
         alt: 'QuietLedger - Prove your tier, keep your secrets',
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'QuietLedger',
     description: 'Private financial passports on Midnight Network',
-    images: ['/og-image.svg'],
+    images: ['/og-image.png'],
   },
 };
 
