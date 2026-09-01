@@ -1,0 +1,41 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle (optional, for social media) -->
+  <defs>
+    <linearGradient id="tierGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#58d4a8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#a371d7;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#d4a574;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#58d4a8;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Outer container (dark background for contrast) -->
+  <rect width="200" height="200" fill="none" rx="0"/>
+
+  <!-- Tier Bands Logo (Concept 2) -->
+  <!-- Tier A (Top) - Solid Teal -->
+  <rect x="40" y="35" width="120" height="30" fill="#58d4a8" rx="2"/>
+  <text x="100" y="56" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#0f1117" text-anchor="middle" dominant-baseline="middle">Tier A</text>
+
+  <!-- Tier B - Teal with Gold accent -->
+  <rect x="40" y="72" width="120" height="30" fill="#58d4a8" rx="2" opacity="0.85"/>
+  <rect x="40" y="72" width="4" height="30" fill="#d4a574" rx="2"/>
+  <text x="100" y="93" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#0f1117" text-anchor="middle" dominant-baseline="middle">Tier B</text>
+
+  <!-- Tier C - Teal with Violet accent -->
+  <rect x="40" y="109" width="120" height="30" fill="#58d4a8" rx="2" opacity="0.70"/>
+  <rect x="40" y="109" width="4" height="30" fill="#a371d7" rx="2"/>
+  <text x="100" y="130" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#0f1117" text-anchor="middle" dominant-baseline="middle">Tier D</text>
+
+  <!-- Tier D (Bottom) - Minimal/Faded -->
+  <rect x="40" y="146" width="120" height="30" fill="#58d4a8" rx="2" opacity="0.55"/>
+  <text x="100" y="167" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#0f1117" text-anchor="middle" dominant-baseline="middle">Verified</text>
+
+  <!-- Verification checkmark overlay (subtle) -->
+  <g transform="translate(165, 50)" opacity="0.8">
+    <circle cx="0" cy="0" r="8" fill="#58d4a8" stroke="#0f1117" stroke-width="1"/>
+    <path d="M -3 0 L -1 2 L 3 -2" stroke="#0f1117" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>
