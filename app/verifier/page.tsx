@@ -177,7 +177,7 @@ export default function VerifierPage() {
             />
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem' }}>
             <div className="form-group">
               <label htmlFor="minTier">Minimum Tier Required</label>
               <select
@@ -263,14 +263,14 @@ export default function VerifierPage() {
                   <strong style={{ fontSize: '1rem', color: 'var(--text)', display: 'block', marginBottom: '0.75rem' }}>
                     {policy.id}
                   </strong>
-                  <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'center', flexWrap: 'wrap' }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                      <span style={{ color: 'var(--text-faint)', fontSize: '0.85rem', fontWeight: 500 }}>Minimum Tier:</span>
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: '1rem', marginTop: '0.75rem' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
+                      <span style={{ color: 'var(--text-faint)', fontSize: '0.85rem', fontWeight: 500 }}>Min Tier:</span>
                       <span className={`tier-badge ${getTierBadgeClass(policy.minTier)}`} style={{ padding: '0.4rem 0.8rem', fontSize: '0.75rem' }}>
                         {policy.minTier}
                       </span>
                     </div>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
                       <span style={{ color: 'var(--text-faint)', fontSize: '0.85rem', fontWeight: 500 }}>Max Age:</span>
                       <code style={{ background: 'rgba(88, 212, 168, 0.15)', padding: '0.4rem 0.8rem', borderRadius: '4px', color: 'var(--circuit)', fontWeight: 600, fontSize: '0.85rem' }}>
                         {policy.maxAgeRounds} blocks
@@ -344,7 +344,7 @@ export default function VerifierPage() {
           <button
             type="button"
             className="button button-secondary"
-            style={{ marginLeft: '1rem' }}
+            style={{ marginLeft: '1rem', marginTop: '0.5rem' }}
             onClick={() => setVerifyCommitment('a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0')}
             disabled={verifyLoading}
           >

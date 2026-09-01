@@ -123,7 +123,7 @@ export default function HolderPage() {
           <button
             type="button"
             className="button button-secondary"
-            style={{ marginLeft: '1rem' }}
+            style={{ marginLeft: '1rem', marginTop: '0.5rem' }}
             onClick={() => setBalance(exampleBalance.toString())}
             disabled={loading}
           >
@@ -150,7 +150,7 @@ export default function HolderPage() {
 
               <h3>Passport Details</h3>
 
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1.5rem', marginTop: '1rem' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1.5rem', marginTop: '1rem' }}>
                 <div>
                   <strong>Tier:</strong>
                   <div style={{ marginTop: '0.5rem' }}>
