@@ -160,7 +160,7 @@ export default function VerifierPage() {
       {/* Register Policy Section */}
       <div className="card">
         <h2>📋 Register Policy</h2>
-        <p style={{ color: '#666', marginBottom: '1.5rem' }}>
+        <p style={{ color: 'var(--text-dim)', marginBottom: '1.5rem' }}>
           Define a policy that specifies the minimum tier and maximum passport age requirements for verification.
         </p>
 
@@ -221,32 +221,83 @@ export default function VerifierPage() {
 
       {/* Policies List */}
       <div className="card">
-        <h3>📌 Active Policies</h3>
+        <h3 style={{ marginBottom: '1.5rem' }}>📌 Active Policies</h3>
         {policies.length > 0 ? (
-          <div style={{ display: 'grid', gap: '1rem', marginTop: '1rem' }}>
+          <div style={{ display: 'grid', gap: '1.2rem', marginTop: '0' }}>
             {policies.map((policy) => (
-              <div key={policy.id} style={{ padding: '1rem', background: 'var(--panel-2)', borderRadius: '4px', border: '1px solid var(--line)' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                  <div>
-                    <strong>{policy.id}</strong>
-                    <p style={{ color: '#666', fontSize: '0.9rem', marginTop: '0.5rem' }}>
-                      Min: <span className={`tier-badge ${getTierBadgeClass(policy.minTier)}`}>{policy.minTier}</span>
-                      {' '} | Max Age: <code>{policy.maxAgeRounds} blocks</code>
-                    </p>
+              <div
+                key={policy.id}
+                style={{
+                  padding: '1.5rem',
+                  background: 'linear-gradient(135deg, rgba(88, 212, 168, 0.08) 0%, rgba(88, 212, 168, 0.03) 100%)',
+                  borderRadius: '8px',
+                  border: '1px solid rgba(88, 212, 168, 0.2)',
+                  position: 'relative',
+                  overflow: 'hidden',
+                  transition: 'all 0.3s ease',
+                  cursor: 'pointer',
+                }}
+                onMouseEnter={(e) => {
+                  const target = e.currentTarget as HTMLElement;
+                  target.style.borderColor = 'var(--circuit)';
+                  target.style.background = 'linear-gradient(135deg, rgba(88, 212, 168, 0.12) 0%, rgba(88, 212, 168, 0.06) 100%)';
+                  target.style.boxShadow = '0 4px 12px rgba(88, 212, 168, 0.15)';
+                }}
+                onMouseLeave={(e) => {
+                  const target = e.currentTarget as HTMLElement;
+                  target.style.borderColor = 'rgba(88, 212, 168, 0.2)';
+                  target.style.background = 'linear-gradient(135deg, rgba(88, 212, 168, 0.08) 0%, rgba(88, 212, 168, 0.03) 100%)';
+                  target.style.boxShadow = 'none';
+                }}
+              >
+                <div style={{
+                  position: 'absolute',
+                  left: 0,
+                  top: 0,
+                  bottom: 0,
+                  width: '3px',
+                  background: 'linear-gradient(180deg, var(--circuit), rgba(88, 212, 168, 0))',
+                }} />
+
+                <div style={{ paddingLeft: '0.5rem' }}>
+                  <strong style={{ fontSize: '1rem', color: 'var(--text)', display: 'block', marginBottom: '0.75rem' }}>
+                    {policy.id}
+                  </strong>
+                  <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'center', flexWrap: 'wrap' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                      <span style={{ color: 'var(--text-faint)', fontSize: '0.85rem', fontWeight: 500 }}>Minimum Tier:</span>
+                      <span className={`tier-badge ${getTierBadgeClass(policy.minTier)}`} style={{ padding: '0.4rem 0.8rem', fontSize: '0.75rem' }}>
+                        {policy.minTier}
+                      </span>
+                    </div>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                      <span style={{ color: 'var(--text-faint)', fontSize: '0.85rem', fontWeight: 500 }}>Max Age:</span>
+                      <code style={{ background: 'rgba(88, 212, 168, 0.15)', padding: '0.4rem 0.8rem', borderRadius: '4px', color: 'var(--circuit)', fontWeight: 600, fontSize: '0.85rem' }}>
+                        {policy.maxAgeRounds} blocks
+                      </code>
+                    </div>
                   </div>
                 </div>
               </div>
             ))}
           </div>
         ) : (
-          <p style={{ color: '#999' }}>No policies registered yet.</p>
+          <div style={{
+            padding: '2rem',
+            textAlign: 'center',
+            background: 'rgba(88, 212, 168, 0.05)',
+            borderRadius: '8px',
+            border: '1px dashed rgba(88, 212, 168, 0.3)',
+          }}>
+            <p style={{ color: 'var(--text-faint)', margin: 0 }}>No policies registered yet.</p>
+          </div>
         )}
       </div>
 
       {/* Verify Passport Section */}
       <div className="card">
         <h2>✓ Verify Passport</h2>
-        <p style={{ color: '#666', marginBottom: '1.5rem' }}>
+        <p style={{ color: 'var(--text-dim)', marginBottom: '1.5rem' }}>
           Verify a passport commitment against a registered policy. Only the tier and policy are checked; the holder's balance remains private.
         </p>
 
@@ -261,7 +312,7 @@ export default function VerifierPage() {
               onChange={(e) => setVerifyCommitment(e.target.value)}
               disabled={verifyLoading}
             />
-            <small style={{ color: '#999', display: 'block', marginTop: '0.5rem' }}>
+            <small style={{ color: 'var(--text-faint)', display: 'block', marginTop: '0.5rem' }}>
               This is a 64-character hex hash, never the raw balance.
             </small>
           </div>
@@ -307,9 +358,9 @@ export default function VerifierPage() {
           </div>
 
           {verifyResult.verified && (
-            <div style={{ marginTop: '1.5rem', padding: '1rem', background: '#d4edda', borderRadius: '4px', borderLeft: '4px solid #28a745' }}>
-              <h4 style={{ color: '#155724', marginBottom: '0.5rem' }}>Verification Passed</h4>
-              <p style={{ color: '#155724' }}>
+            <div style={{ marginTop: '1.5rem', padding: '1rem', background: 'rgba(88, 212, 168, 0.1)', borderRadius: '4px', borderLeft: '4px solid var(--circuit)' }}>
+              <h4 style={{ color: 'var(--circuit)', marginBottom: '0.5rem' }}>Verification Passed</h4>
+              <p style={{ color: '#a8f5d8' }}>
                 The passport holder has demonstrated they meet the policy requirement. You can proceed with confidence.
               </p>
             </div>
@@ -329,7 +380,7 @@ export default function VerifierPage() {
       {/* Privacy Info */}
       <div className="card">
         <h3>🔒 What Verifiers Can See</h3>
-        <ul style={{ marginLeft: '1.5rem', color: '#666' }}>
+        <ul style={{ marginLeft: '1.5rem', color: 'var(--text-dim)' }}>
           <li>✓ Tier level (A, B, C, or D)</li>
           <li>✓ Passport age (blocks since issuance)</li>
           <li>✓ Whether the tier meets the policy minimum</li>
